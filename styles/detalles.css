@@ -24,7 +24,7 @@
   .main-container {
     position: relative;
     width: 1440px;
-    height: 1939px;
+    height: auto;
     margin: 0 auto;
     background: #ffffff;
     overflow: hidden;
@@ -372,7 +372,7 @@
   .flex-row-b {
     position: relative;
     width: 1440px;
-    height: 1085px;
+    height: max-content;
     margin: 0 0 0 0;
     z-index: 48;
   }
@@ -382,10 +382,11 @@
     align-items: flex-start;
     flex-wrap: nowrap;
     gap: 24px;
-    position: absolute;
+    position: relative;
     width: 1440px;
+    height: max-content;
     min-width: 240px;
-    height: 683px;
+    min-height: 690px;
     top: 0;
     left: 0;
     padding: 64px 64px 64px 64px;
@@ -400,6 +401,7 @@
     gap: 64px;
     position: relative;
     min-width: 0;
+    height: max-content;
     z-index: 1;
   }
   .icon-button {
@@ -1021,10 +1023,9 @@
     align-items: flex-start;
     flex-wrap: nowrap;
     gap: 48px;
-    position: absolute;
+    position: relative;
     width: 1440px;
-    height: 450px;
-    top: 635px;
+    height: max-content;
     left: 0;
     padding: 64px 64px 64px 64px;
     background: #ffffff;
@@ -1777,7 +1778,7 @@
     margin: 3px 0 0 0;
     padding: 64px 64px 64px 64px;
     background: #ffffff;
-    z-index: 118;
+    z-index: 118;  
   }
   .text-content-heading {
     display: flex;
