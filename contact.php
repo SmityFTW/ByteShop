@@ -67,21 +67,29 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
           </div>
     
           <div class="dropdown-menu" id="tienda-menu">
-            <a href="tienda.php?id=2&token=<?php echo 
-                      hash_hmac('sha1', 2, KEY_TOKEN); ?>">Laptop</a>
-            <a href="#">Smartphone</a>
-            <a href="#">Almacenamiento</a>
-            <a href="tienda.php?id=3&token=<?php echo 
-                      hash_hmac('sha1', 3, KEY_TOKEN); ?>">Tarjetas de regalo</a>
-            <a href="#" id="tienda-menu-button">Accesorios de computadora</a>
-          </div>
-          <div class="dropdown-menu-menu" id="tienda-menu-menu">
-            <a href="#">Mochila para Laptop</a>
-            <a href="#">Audifonos</a>
-            <a href="#">Ratones</a>
-            <a href="#">Alfombrillas</a>
-            <a href="#">Teclados</a>
-          </div>
+        <a href="tienda.php?id=2&token=<?php echo 
+                  hash_hmac('sha1', 2, KEY_TOKEN); ?>">Laptop</a>
+        <a href="tienda.php?id=4&token=<?php echo 
+                  hash_hmac('sha1', 4, KEY_TOKEN); ?>">Smartphone</a>
+        <a href="tienda.php?id=5&token=<?php echo 
+                  hash_hmac('sha1', 5, KEY_TOKEN); ?>">Almacenamiento</a>
+        <a href="tienda.php?id=3&token=<?php echo 
+                  hash_hmac('sha1', 3, KEY_TOKEN); ?>">Tarjetas de regalo</a>
+        <a id="tienda-menu-button" href="tienda.php?id=10&token=<?php echo 
+                  hash_hmac('sha1', 10, KEY_TOKEN); ?>">Accesorios de computadora</a>
+      </div>
+      <div class="dropdown-menu-menu" id="tienda-menu-menu">
+        <a href="tienda.php?id=6&token=<?php echo 
+                  hash_hmac('sha1', 6, KEY_TOKEN); ?>">Mochila para Laptop</a>
+        <a href="tienda.php?id=7&token=<?php echo 
+                  hash_hmac('sha1', 7, KEY_TOKEN); ?>">Audifonos</a>
+        <a href="tienda.php?id=1&token=<?php echo 
+                  hash_hmac('sha1', 1, KEY_TOKEN); ?>">Ratones</a>
+        <a href="tienda.php?id=8&token=<?php echo 
+                  hash_hmac('sha1', 8, KEY_TOKEN); ?>">Alfombrillas</a>
+        <a href="tienda.php?id=9&token=<?php echo 
+                  hash_hmac('sha1', 9, KEY_TOKEN); ?>">Teclados</a>
+      </div>
 
 
       <div class="design">
@@ -107,7 +115,7 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
                 </button>
               </div>
             </div>
-            <div class="card-9">
+            <div class="card-9" >
               <div class="frame-a">
                 <div class="ellipse-b"></div>
                 <div class="frame-c">
@@ -127,7 +135,7 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
                 </button>
               </div>
             </div>
-            <div class="card-14">
+            <div class="card-14" style="display: none;">
               <div class="frame-15">
                 <div class="ellipse-16"></div>
                 <div class="frame-17">
@@ -169,8 +177,29 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
                 </button>
               </div>
             </div>
+
+            <div class="component-card">
+              <div class="frame-21">
+                <div class="ellipse-22"></div>
+                <div class="frame-23">
+                  <span class="yulia-mikhailova">Gema Tercero</span
+                  ><span class="programmist">Designer</span>
+                </div>
+                <button class="button-24">
+                  <div class="icon-social-twitter-25">
+                    <div class="frame-26"><div class="vector-27"></div></div>
+                  </div>
+                  <div class="social-linkedin-brands">
+                    <div class="frame-28"><div class="vector-29"></div></div>
+                  </div>
+                  <div class="social-facebook-brands">
+                    <div class="frame-2a"><div class="vector-2b"></div></div>
+                  </div>
+                </button>
+              </div>
+            </div>
             
-            <div class="component-card-3b">
+            <div class="component-card-3b" style="display: none;">
               <div class="frame-3c">
                 <div class="ellipse-3d"></div>
                 <div class="frame-3e">

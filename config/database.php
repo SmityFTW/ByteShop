@@ -6,6 +6,7 @@ class Database {
     private $username = "root";
     private $password = "";
     private $charset = "utf8";
+    private $collate = "utf8_spanish_ci";
 
     function conectar()
     {
@@ -13,6 +14,7 @@ class Database {
             $conexion = "mysql:host=" . $this->hostname . 
                 "; dbname=" . $this->database . 
                 "; charset=" . $this->charset;
+                "; collate=" . $this->collate;
 
             $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

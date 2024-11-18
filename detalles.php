@@ -22,7 +22,7 @@ if($id == '' || $token == ''){
     $sql->execute([$id]);
     if($sql->fetchColumn() > 0){
 
-        $sql = $con->prepare('SELECT a.imagen, a.nombre, c.nombre AS c_nombre, a.descripcion, a.precio_venta FROM articulo a 
+        $sql = $con->prepare('SELECT a.imagen, a.nombre, a.descripcion, c.nombre AS c_nombre, c.descripcion AS c_descripcion, a.precio_venta FROM articulo a 
         JOIN categoria c ON a.id_categoria = c.id_categoria WHERE a.id_articulo=? AND a.estado=1 
         LIMIT 1');
 
@@ -32,6 +32,7 @@ if($id == '' || $token == ''){
         $nombre = $row['nombre'];
         $c_nombre = $row['c_nombre'];
         $descripcion = $row['descripcion'];
+        $c_descripcion = $row['c_descripcion'];
         $precio_venta = $row['precio_venta'];
 
 
@@ -108,22 +109,29 @@ if($id == '' || $token == ''){
 
 
       <div class="dropdown-menu" id="tienda-menu">
-          <a href="tienda.php?id=2&token=<?php echo 
-                    hash_hmac('sha1', 2, KEY_TOKEN); ?>">Laptop</a>
-          <a href="#">Smartphone</a>
-          <a href="#">Almacenamiento</a>
-          <a href="tienda.php?id=3&token=<?php echo 
-                    hash_hmac('sha1', 3, KEY_TOKEN); ?>">Tarjetas de regalo</a>
-          <a href="#" id="tienda-menu-button">Accesorios de computadora</a>
-        </div>
-        <div class="dropdown-menu-menu" id="tienda-menu-menu">
-          <a href="#">Mochila para Laptop</a>
-          <a href="#">Audifonos</a>
-          <a href="tienda.php?id=1&token=<?php echo 
-                    hash_hmac('sha1', 1, KEY_TOKEN); ?>">Ratones</a>
-          <a href="#">Alfombrillas</a>
-          <a href="#">Teclados</a>
-        </div>
+        <a href="tienda.php?id=2&token=<?php echo 
+                  hash_hmac('sha1', 2, KEY_TOKEN); ?>">Laptop</a>
+        <a href="tienda.php?id=4&token=<?php echo 
+                  hash_hmac('sha1', 4, KEY_TOKEN); ?>">Smartphone</a>
+        <a href="tienda.php?id=5&token=<?php echo 
+                  hash_hmac('sha1', 5, KEY_TOKEN); ?>">Almacenamiento</a>
+        <a href="tienda.php?id=3&token=<?php echo 
+                  hash_hmac('sha1', 3, KEY_TOKEN); ?>">Tarjetas de regalo</a>
+        <a id="tienda-menu-button" href="tienda.php?id=10&token=<?php echo 
+                  hash_hmac('sha1', 10, KEY_TOKEN); ?>">Accesorios de computadora</a>
+      </div>
+      <div class="dropdown-menu-menu" id="tienda-menu-menu">
+        <a href="tienda.php?id=6&token=<?php echo 
+                  hash_hmac('sha1', 6, KEY_TOKEN); ?>">Mochila para Laptop</a>
+        <a href="tienda.php?id=7&token=<?php echo 
+                  hash_hmac('sha1', 7, KEY_TOKEN); ?>">Audifonos</a>
+        <a href="tienda.php?id=1&token=<?php echo 
+                  hash_hmac('sha1', 1, KEY_TOKEN); ?>">Ratones</a>
+        <a href="tienda.php?id=8&token=<?php echo 
+                  hash_hmac('sha1', 8, KEY_TOKEN); ?>">Alfombrillas</a>
+        <a href="tienda.php?id=9&token=<?php echo 
+                  hash_hmac('sha1', 9, KEY_TOKEN); ?>">Teclados</a>
+      </div>
 
 
       <div class="flex-row-b">
@@ -191,16 +199,35 @@ if($id == '' || $token == ''){
                     <span class="title-20"><?php echo $c_nombre; ?></span>
                     <div class="chevron-up"><div class="icon-21"></div></div>
                   </div>
+
                   <div class="accordion-content">
-                    <span class="body-22"
-                      ><?php echo $descripcion; ?></span
-                    >
+                    <span class="body-22"><?php echo $c_descripcion; ?></span>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
+
+        <div class="accordio-2">
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <span class="title-20">Acerca del producto</span>
+              <div class="chevron-up"><div class="icon-21"></div></div>
+            </div>
+
+            <div class="accordion-content">
+              <span class="body-22"><?php echo $descripcion; ?></span>
+            </div>
+
+          </div>
+        </div>
+
+
+
         <div class="card-grid-reviews">
           <div class="text-heading-23">
             <span class="text-heading-24">Últimos comentarios</span>

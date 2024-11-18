@@ -109,18 +109,26 @@ if($id == '' || $token == ''){
       <div class="dropdown-menu" id="tienda-menu">
         <a href="tienda.php?id=2&token=<?php echo 
                   hash_hmac('sha1', 2, KEY_TOKEN); ?>">Laptop</a>
-        <a href="#">Smartphone</a>
-        <a href="#">Almacenamiento</a>
+        <a href="tienda.php?id=4&token=<?php echo 
+                  hash_hmac('sha1', 4, KEY_TOKEN); ?>">Smartphone</a>
+        <a href="tienda.php?id=5&token=<?php echo 
+                  hash_hmac('sha1', 5, KEY_TOKEN); ?>">Almacenamiento</a>
         <a href="tienda.php?id=3&token=<?php echo 
                   hash_hmac('sha1', 3, KEY_TOKEN); ?>">Tarjetas de regalo</a>
-        <a href="#" id="tienda-menu-button">Accesorios de computadora</a>
+        <a id="tienda-menu-button" href="tienda.php?id=10&token=<?php echo 
+                  hash_hmac('sha1', 10, KEY_TOKEN); ?>">Accesorios de computadora</a>
       </div>
       <div class="dropdown-menu-menu" id="tienda-menu-menu">
-        <a href="#">Mochila para Laptop</a>
-        <a href="#">Audifonos</a>
-        <a href="#">Ratones</a>
-        <a href="#">Alfombrillas</a>
-        <a href="#">Teclados</a>
+        <a href="tienda.php?id=6&token=<?php echo 
+                  hash_hmac('sha1', 6, KEY_TOKEN); ?>">Mochila para Laptop</a>
+        <a href="tienda.php?id=7&token=<?php echo 
+                  hash_hmac('sha1', 7, KEY_TOKEN); ?>">Audifonos</a>
+        <a href="tienda.php?id=1&token=<?php echo 
+                  hash_hmac('sha1', 1, KEY_TOKEN); ?>">Ratones</a>
+        <a href="tienda.php?id=8&token=<?php echo 
+                  hash_hmac('sha1', 8, KEY_TOKEN); ?>">Alfombrillas</a>
+        <a href="tienda.php?id=9&token=<?php echo 
+                  hash_hmac('sha1', 9, KEY_TOKEN); ?>">Teclados</a>
       </div>
         
       <main>
