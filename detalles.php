@@ -93,18 +93,39 @@ if($id == '' || $token == ''){
         <div class="left-nav">
           <div class="logo"></div>
           <div class="nav-group">
-            <div class="nav-item"><span class="label-7">Inicio</span></div>
-            <div class="menu-item-default">
+            <div class="btn nav-item"><span class="label-7">Inicio</span></div>
+            <div class="btn menu-item-default" id="tienda-button">
               <span class="label-8">Tienda</span>
               <div class="essential-icon"><div class="vector"></div></div>
             </div>
-            <div class="menu-item-default-9">
+            <div class="btn menu-item-default-9" id="contactanos-button">
               <span class="label-a">Contactanos</span>
               <div class="essential-icon-b"><div class="vector-c"></div></div>
             </div>
           </div>
         </div>
       </div>
+
+
+      <div class="dropdown-menu" id="tienda-menu">
+          <a href="tienda.php?id=2&token=<?php echo 
+                    hash_hmac('sha1', 2, KEY_TOKEN); ?>">Laptop</a>
+          <a href="#">Smartphone</a>
+          <a href="#">Almacenamiento</a>
+          <a href="tienda.php?id=3&token=<?php echo 
+                    hash_hmac('sha1', 3, KEY_TOKEN); ?>">Tarjetas de regalo</a>
+          <a href="#" id="tienda-menu-button">Accesorios de computadora</a>
+        </div>
+        <div class="dropdown-menu-menu" id="tienda-menu-menu">
+          <a href="#">Mochila para Laptop</a>
+          <a href="#">Audifonos</a>
+          <a href="tienda.php?id=1&token=<?php echo 
+                    hash_hmac('sha1', 1, KEY_TOKEN); ?>">Ratones</a>
+          <a href="#">Alfombrillas</a>
+          <a href="#">Teclados</a>
+        </div>
+
+
       <div class="flex-row-b">
         <div class="page-product">
           <div class="section">
@@ -466,7 +487,8 @@ if($id == '' || $token == ''){
 
   </main>
 
-
+  <script src="scripts/navbar.js"></script>
+  <script src="scripts/script.js"></script>
 
   </body>
 
