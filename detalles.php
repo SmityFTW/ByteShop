@@ -22,18 +22,24 @@ if($id == '' || $token == ''){
     $sql->execute([$id]);
     if($sql->fetchColumn() > 0){
 
-        $sql = $con->prepare('SELECT a.imagen, a.nombre, a.descripcion, c.nombre AS c_nombre, c.descripcion AS c_descripcion, a.precio_venta FROM articulo a 
+        $sql = $con->prepare('SELECT a.imagen, a.nombre, a.descripcion, c.nombre AS c_nombre, c.descripcion AS c_descripcion, a.precio_venta, a.descuento FROM articulo a 
         JOIN categoria c ON a.id_categoria = c.id_categoria WHERE a.id_articulo=? AND a.estado=1 
         LIMIT 1');
 
         $sql->execute([$id]);
         $row = $sql->fetch(PDO::FETCH_ASSOC);
-        $imagen = $row['imagen'];
         $nombre = $row['nombre'];
         $c_nombre = $row['c_nombre'];
         $descripcion = $row['descripcion'];
         $c_descripcion = $row['c_descripcion'];
         $precio_venta = $row['precio_venta'];
+        $descuento = $row['descuento'];
+        $precio_desc = $precio_venta - (($precio_venta * $descuento) / 100);
+        $dir_images = 'images/productos/' . $row['imagen'];
+
+
+        $imagen = $row['imagen'];
+
 
 
 
@@ -85,7 +91,7 @@ if($id == '' || $token == ''){
             </div>
           </button>
 
-          <a href="carrito.php" class="btn btn-primary">
+          <a href="checkout.php" class="btn btn-primary">
             Carrito <span id="num_cart" class="badge bg-secondary"><?php echo $num_cart; ?></span>
           </a>
 
