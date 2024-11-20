@@ -27,7 +27,11 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
     <div class="main-container">
       <div class="desktop">
         <div class="navbar">
-          <div class="image"></div>
+        <div class="image">
+
+              <img src="imagenes/navbar/byteshop-logo.jpg" style="width: 100px; height: 48px;">
+
+        </div>
           <div class="social-links">
             <button class="button">
               <div class="button-1">
@@ -89,7 +93,7 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
           <button class="frame">
             <span class="buy-now">Compra Ahora!</span>
           </button>
-          <div class="rectangle"></div>
+          <div class="rectangle" style="background: url(imagenes/index/index1.jpg) no-repeat center;"></div>
         </div>
         <div class="frame-b">
           <div class="ellipse"></div>

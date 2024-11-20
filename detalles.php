@@ -73,7 +73,11 @@ if($id == '' || $token == ''){
   <main>
     <div class="main-container">
       <div class="navbar">
-        <div class="image"></div>
+      <div class="image">
+
+      <img src="imagenes/navbar/byteshop-logo.jpg" style="width: 100px; height: 48px;">
+
+      </div>
         <div class="social-links">
           <button class="button">
             <div class="button-1">
