@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 require '../config/config.php';
@@ -61,4 +62,69 @@ function eliminar($id){
     } else {
         return false;
     }
+=======
+<?php
+
+require '../config/config.php';
+require '../config/database.php';
+
+if(isset($_POST['action'])){
+
+    $action = $_POST['action'];
+    $id = isset($_POST['id']) ? $_POST['id'] : 0;
+
+    if($action == 'agregar') {
+        $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 0;
+        $respuesta = agregar($id, $cantidad);
+        if($respuesta>0){
+            $datos['ok'] = true;
+        } else {
+            $datos['ok'] = false;
+        }
+        $datos['sub'] = MONEDA . number_format($respuesta, 2, '.', ',');
+    } else if($action == 'eliminar'){
+        $datos['ok'] = eliminar($id);
+    } else {
+        $datos['ok'] = false;
+    }
+} else {
+    $datos['ok'] = false;
+}
+
+echo json_encode($datos);
+
+function agregar($id, $cantidad)
+{
+    $res = 0;
+    if($id > 0 && $cantidad > 0 && is_numeric(($cantidad))){
+        if(isset($_SESSION['carrito']['productos'][$id])){
+            $_SESSION['carrito']['productos'][$id] = $cantidad;
+
+            $db = new Database();
+            $con = $db->conectar();
+            $sql = $con->prepare('SELECT precio_venta, descuento FROM articulo WHERE id_articulo=? AND estado=1 LIMIT 1');
+            $sql->execute([$id]);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            $precio_venta = $row['precio_venta'];
+            $descuento = $row['descuento'];
+            $precio_desc = $precio_venta - (($precio_venta * $descuento) / 100);
+            $res = $cantidad * $precio_desc;
+
+            return $res;
+        }
+    } else {
+        return $res;
+    }
+}
+
+function eliminar($id){
+    if($id > 0) {
+        if(isset($_SESSION['carrito']['productos'][$id])) {
+            unset($_SESSION['carrito']['productos'][$id]);
+            return true;
+        }
+    } else {
+        return false;
+    }
+>>>>>>> 3d0a4ac568ce5cfeb76d2afadfeba4bf8e8e20d5
 }

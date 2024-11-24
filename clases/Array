@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Array
 (
     [detalles] => Array
@@ -111,3 +112,118 @@ Array
         )
 
 )
+=======
+Array
+(
+    [detalles] => Array
+        (
+            [id] => 5AF11387KR530720W
+            [intent] => CAPTURE
+            [status] => COMPLETED
+            [purchase_units] => Array
+                (
+                    [0] => Array
+                        (
+                            [reference_id] => default
+                            [amount] => Array
+                                (
+                                    [currency_code] => USD
+                                    [value] => 1739.94
+                                )
+
+                            [payee] => Array
+                                (
+                                    [email_address] => sb-k5q7w34037125@business.example.com
+                                    [merchant_id] => SG32TPJ3F5BP6
+                                )
+
+                            [shipping] => Array
+                                (
+                                    [name] => Array
+                                        (
+                                            [full_name] => John Doe
+                                        )
+
+                                    [address] => Array
+                                        (
+                                            [address_line_1] => 1 Main St
+                                            [admin_area_2] => San Jose
+                                            [admin_area_1] => CA
+                                            [postal_code] => 95131
+                                            [country_code] => US
+                                        )
+
+                                )
+
+                            [payments] => Array
+                                (
+                                    [captures] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [id] => 3RP5758283116430R
+                                                    [status] => COMPLETED
+                                                    [amount] => Array
+                                                        (
+                                                            [currency_code] => USD
+                                                            [value] => 1739.94
+                                                        )
+
+                                                    [final_capture] => 1
+                                                    [seller_protection] => Array
+                                                        (
+                                                            [status] => ELIGIBLE
+                                                            [dispute_categories] => Array
+                                                                (
+                                                                    [0] => ITEM_NOT_RECEIVED
+                                                                    [1] => UNAUTHORIZED_TRANSACTION
+                                                                )
+
+                                                        )
+
+                                                    [create_time] => 2024-11-19T18:24:30Z
+                                                    [update_time] => 2024-11-19T18:24:30Z
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [payer] => Array
+                (
+                    [name] => Array
+                        (
+                            [given_name] => John
+                            [surname] => Doe
+                        )
+
+                    [email_address] => sb-syd2h34075747@personal.example.com
+                    [payer_id] => AFR9NQ8PW3V6J
+                    [address] => Array
+                        (
+                            [country_code] => US
+                        )
+
+                )
+
+            [create_time] => 2024-11-19T18:24:18Z
+            [update_time] => 2024-11-19T18:24:30Z
+            [links] => Array
+                (
+                    [0] => Array
+                        (
+                            [href] => https://api.sandbox.paypal.com/v2/checkout/orders/5AF11387KR530720W
+                            [rel] => self
+                            [method] => GET
+                        )
+
+                )
+
+        )
+
+)
+>>>>>>> 3d0a4ac568ce5cfeb76d2afadfeba4bf8e8e20d5
